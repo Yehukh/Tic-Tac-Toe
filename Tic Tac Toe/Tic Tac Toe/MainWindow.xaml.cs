@@ -24,5 +24,9 @@ namespace Tic_Tac_Toe
         {
             InitializeComponent();
         }
+        private bool _firstPlayer = true;
+        private void CellClick(object sender, RoutedEventArgs e)
+        { 
+        }
     }
 }
