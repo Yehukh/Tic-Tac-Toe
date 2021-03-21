@@ -25,9 +25,15 @@ namespace Tic_Tac_Toe.Pages
             InitializeComponent();
         }
 
+        private bool _firstPlayer = true;
         private void CellClick(object sender, RoutedEventArgs e)
         {
-            
+            var cell = (sender as Button).DataContext as BoardCell;
+            cell.Sign = _firstPlayer ? "X" : "O";
+            _firstPlayer = !_firstPlayer;
+
+            string[,] boardMat = RefreshMatrix.UpdateMat();
+
         }
     }
 }

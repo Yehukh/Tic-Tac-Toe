@@ -33,7 +33,10 @@ namespace Tic_Tac_Toe
         {
             get
             {
-                _cells = new ObservableCollection<BoardCell>(Enumerable.Range(0, Rows * Columns).Select(i => new BoardCell()));
+                if (_cells == null || _cells.Count != Rows*Columns)
+                {
+                    _cells = new ObservableCollection<BoardCell>(Enumerable.Range(0, Rows * Columns).Select(i => new BoardCell()));
+                }
                 return _cells;
             }
         }
