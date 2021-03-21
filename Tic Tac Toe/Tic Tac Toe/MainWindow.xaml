@@ -6,24 +6,17 @@
         xmlns:local="clr-namespace:Tic_Tac_Toe"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="500">
-    <Grid x:Name="Container">
-        <Grid.DataContext>
-            <local:Board Rows="3" Columns="3"></local:Board>
-        </Grid.DataContext>
-        <ItemsControl x:Name="Board" ItemsSource="{Binding Path=Cells}" Grid.ColumnSpan="2">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid  Rows="{Binding Path=Rows}" Columns="{Binding Path=Columns}"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button Content="{Binding Path=Sign}" 
-                        IsEnabled="{Binding Path=CanSelect}"
-                        Click="CellClick"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <Frame Grid.Column="1" x:Name="Main" NavigationUIVisibility="Hidden"/>
+
+        <StackPanel Grid.Column="0">
+            <Button x:Name="BoardButton" Content="Board" Click="BoardButton_Click"/>
+            <Button x:Name="SettingsButton" Content="Settings" Click="SettingsButton_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

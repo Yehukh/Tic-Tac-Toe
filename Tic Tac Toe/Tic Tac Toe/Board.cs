@@ -7,18 +7,33 @@ using System.Threading.Tasks;
 
 namespace Tic_Tac_Toe
 {
-    public class Board
+    public static class Board
     {
-        public int Rows { get; set; }
-        public int Columns { get; set; }
+        private static int _rows = 3;
+        private static int _columns = 3;
+        public static int Rows
+        {
+            get => _rows;
+            set
+            {
+                _rows = value;
+            }
+        }
+        public static int Columns
+        {
+            get => _columns;
+            set
+            {
+                _columns = value;
+            }
+        }
 
-        private ObservableCollection<BoardCell> _cells;
-        public ObservableCollection<BoardCell> Cells
+        private static ObservableCollection<BoardCell> _cells;
+        public static ObservableCollection<BoardCell> Cells
         {
             get
             {
-                if (_cells == null)
-                    _cells = new ObservableCollection<BoardCell>(Enumerable.Range(0, Rows * Columns).Select(i => new BoardCell()));
+                _cells = new ObservableCollection<BoardCell>(Enumerable.Range(0, Rows * Columns).Select(i => new BoardCell()));
                 return _cells;
             }
         }
