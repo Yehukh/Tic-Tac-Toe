@@ -4,14 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tic_Tac_Toe"
-        xmlns:hamburgerMenu="clr-namespace:HamburgerMenu;assembly=HamburgerMenu"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="500">
     <Grid x:Name="Container">
         <Grid.DataContext>
             <local:Board Rows="3" Columns="3"></local:Board>
         </Grid.DataContext>
-        <ItemsControl x:Name="Board" Margin="50, 0, 0, 0" ItemsSource="{Binding Path=Cells}" Grid.ColumnSpan="2">
+        <ItemsControl x:Name="Board" ItemsSource="{Binding Path=Cells}" Grid.ColumnSpan="2">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid  Rows="{Binding Path=Rows}" Columns="{Binding Path=Columns}"/>
@@ -26,9 +25,5 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <hamburgerMenu:HamburgerMenu Background="Black" MenuIconColor="White" SelectionIndicatorColor="White" MenuItemForeground="White" HorizontalAlignment="Left">
-            <hamburgerMenu:HamburgerMenuItem Icon="tic tac toe.png" Text="Board" SelectionCommand="{Binding MyCommand}"/>
-            <hamburgerMenu:HamburgerMenuItem Icon="settings.png" Text="Settings"/>
-        </hamburgerMenu:HamburgerMenu>
     </Grid>
 </Window>
