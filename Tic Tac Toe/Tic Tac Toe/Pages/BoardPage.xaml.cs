@@ -33,9 +33,9 @@ namespace Tic_Tac_Toe.Pages
             _firstPlayer = !_firstPlayer;
 
             string[,] boardMat = RefreshMatrix.UpdateMat();
-            if (CheckWinner.CheckForResult(boardMat))
+            if (CheckWinner.CheckForResult(boardMat, cell.Sign))
             {
-                MessageBox.Show("X won!!");
+                MessageBox.Show($"{cell.Sign} won!!");
             }
         }
     }

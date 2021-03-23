@@ -10,7 +10,7 @@ namespace Tic_Tac_Toe
     public class CheckWinner
     {
 		private static int block;
-        public static bool CheckForResult(string[,] matrix)
+        public static bool CheckForResult(string[,] matrix, string symbol)
         {
 
             switch (Board.Columns)
@@ -35,7 +35,7 @@ namespace Tic_Tac_Toe
 			{
 				for (int row = 0; row < Board.Columns - block + 1; row++)
 				{
-					if (CheckDiagonals(matrix, col, row) || CheckLanes(matrix, col, row)) 
+					if (CheckDiagonals(matrix, col, row, symbol) || CheckLanes(matrix, col, row, symbol)) 
 					{
 						return true;
 					}
@@ -44,20 +44,20 @@ namespace Tic_Tac_Toe
 			}
 			return false;
 		}
-		private static bool CheckDiagonals(string[,] matrix, int offsetX, int offsetY)
+		private static bool CheckDiagonals(string[,] matrix, int offsetX, int offsetY, string symbol)
         {
 			bool toright, toleft;
 			toright = true;
 			toleft = true;
 			for (int i = 0; i < block; i++)
 			{
-				toright &= (matrix[i + offsetX, i + offsetY] == "X");
-				toleft &= (matrix[block - i - 1 + offsetX, i + offsetY] == "X");
+				toright &= (matrix[i + offsetX, i + offsetY] == symbol);
+				toleft &= (matrix[block - i - 1 + offsetX, i + offsetY] == symbol);
 			}
 
 			return (toright || toleft);
 		}
-		private static bool CheckLanes(string[,] matrix, int offsetX, int offsetY)
+		private static bool CheckLanes(string[,] matrix, int offsetX, int offsetY, string symbol)
 		{
 			bool cols, rows;
 			for (int col = offsetX; col < block + offsetX; col++)
@@ -66,8 +66,8 @@ namespace Tic_Tac_Toe
 				rows = true;
 				for (int row = offsetY; row < block + offsetY; row++)
 				{
-					cols &= (matrix[col, row] == "X");
-					rows &= (matrix[row, col] == "X");
+					cols &= (matrix[col, row] == symbol);
+					rows &= (matrix[row, col] == symbol);
 				}
 
 				
