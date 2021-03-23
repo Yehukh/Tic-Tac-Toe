@@ -33,7 +33,10 @@ namespace Tic_Tac_Toe.Pages
             _firstPlayer = !_firstPlayer;
 
             string[,] boardMat = RefreshMatrix.UpdateMat();
-
+            if (CheckWinner.CheckForResult(boardMat))
+            {
+                MessageBox.Show("X won!!");
+            }
         }
     }
 }
