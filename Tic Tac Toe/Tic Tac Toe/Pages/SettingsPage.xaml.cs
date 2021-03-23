@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,8 +28,29 @@ namespace Tic_Tac_Toe.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Board.Columns = Convert.ToInt32(Nrows.Text);
-            Board.Rows = Convert.ToInt32(Nrows.Text);
+            try
+            {
+                int rows = Convert.ToInt32(Nrows.Text);
+                if (rows >= 3 && rows <= 20)
+                {
+                    Board.Columns = rows;
+                    Board.Rows = rows;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Not valid number");
+                Nrows.Text = string.Empty;
+            }
+        }
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }
