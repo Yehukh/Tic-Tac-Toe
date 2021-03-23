@@ -8,6 +8,14 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BoardPage">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="32" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+    </Page.Resources>
 
     <Grid x:Name="MainBoard">
         <ItemsControl x:Name="Board" ItemsSource="{x:Static board:Board.Cells}" Grid.ColumnSpan="2">
