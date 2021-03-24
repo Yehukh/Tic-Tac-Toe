@@ -37,6 +37,13 @@ namespace Tic_Tac_Toe.Pages
             {
                 MessageBox.Show($"{cell.Sign} won!!");
             }
+            else
+            {
+                if (CheckForTie.CheckBoarForTie(boardMat))
+                {
+                    MessageBox.Show("Tie");
+                }
+            }
         }
     }
 }
