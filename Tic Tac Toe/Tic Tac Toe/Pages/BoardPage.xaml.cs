@@ -39,9 +39,13 @@ namespace Tic_Tac_Toe.Pages
             if (CheckWinner.CheckForResult(boardMat, cell.Sign))
             {
                 var resetGameWindow = new ResetGameWindow($"{cell.Sign} won!!");
+                foreach(var c in Tic_Tac_Toe.Board.Cells)
+                {
+                    c.CanSelect = false;
+                }
                 if (resetGameWindow.ShowDialog() == true)
                 {
-                    
+
                 }
             }
             else
@@ -49,6 +53,10 @@ namespace Tic_Tac_Toe.Pages
                 if (CheckForTie.CheckBoarForTie(boardMat))
                 {
                     var resetGameWindow = new ResetGameWindow("Tie");
+                    foreach (var c in Tic_Tac_Toe.Board.Cells)
+                    {
+                        c.CanSelect = false;
+                    }
                     if (resetGameWindow.ShowDialog() == true)
                     {
 
