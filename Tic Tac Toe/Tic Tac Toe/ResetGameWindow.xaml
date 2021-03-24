@@ -17,7 +17,7 @@
         <TextBlock Grid.Row="1">Do you want to restart game?</TextBlock>
 
         <WrapPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,15,0,0">
-            <Button IsDefault="True" MinWidth="60" Margin="0,0,10,0">Yes</Button>
+            <Button IsDefault="True" Click="Accept_Click" MinWidth="60" Margin="0,0,10,0">Yes</Button>
             <Button IsCancel="True" MinWidth="60">No</Button>
         </WrapPanel>
 

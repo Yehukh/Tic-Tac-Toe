@@ -36,5 +36,10 @@ namespace Tic_Tac_Toe
             Result = result;
             InitializeComponent();
         }
+
+        private void Accept_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
     }
 }

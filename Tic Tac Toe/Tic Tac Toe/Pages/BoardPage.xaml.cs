@@ -20,6 +20,7 @@ namespace Tic_Tac_Toe.Pages
     /// </summary>
     public partial class BoardPage : Page
     {
+       
         public BoardPage()
         {
             InitializeComponent();
@@ -38,15 +39,20 @@ namespace Tic_Tac_Toe.Pages
             if (CheckWinner.CheckForResult(boardMat, cell.Sign))
             {
                 var resetGameWindow = new ResetGameWindow($"{cell.Sign} won!!");
-                resetGameWindow.Show();
+                if (resetGameWindow.ShowDialog() == true)
+                {
+                    
+                }
             }
             else
             {
                 if (CheckForTie.CheckBoarForTie(boardMat))
                 {
                     var resetGameWindow = new ResetGameWindow("Tie");
-                    resetGameWindow.Show();
+                    if (resetGameWindow.ShowDialog() == true)
+                    {
 
+                    }
                 }
             }
         }
