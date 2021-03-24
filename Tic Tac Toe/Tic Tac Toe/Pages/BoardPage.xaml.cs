@@ -28,20 +28,25 @@ namespace Tic_Tac_Toe.Pages
         private bool _firstPlayer = true;
         private void CellClick(object sender, RoutedEventArgs e)
         {
+
             var cell = (sender as Button).DataContext as BoardCell;
             cell.Sign = _firstPlayer ? "X" : "O";
             _firstPlayer = !_firstPlayer;
 
             string[,] boardMat = RefreshMatrix.UpdateMat();
+
             if (CheckWinner.CheckForResult(boardMat, cell.Sign))
             {
-                MessageBox.Show($"{cell.Sign} won!!");
+                var resetGameWindow = new ResetGameWindow($"{cell.Sign} won!!");
+                resetGameWindow.Show();
             }
             else
             {
                 if (CheckForTie.CheckBoarForTie(boardMat))
                 {
-                    MessageBox.Show("Tie");
+                    var resetGameWindow = new ResetGameWindow("Tie");
+                    resetGameWindow.Show();
+
                 }
             }
         }
