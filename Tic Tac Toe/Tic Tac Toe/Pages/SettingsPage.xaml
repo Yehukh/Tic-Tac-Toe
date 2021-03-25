@@ -9,9 +9,20 @@
       Title="SettingsPage">
 
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="150,189,0,0" Click="Button_Click"/>
-        <TextBox x:Name="Nrows" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="130,146,0,0"/>
-        <Label Content="Provide value >= 3 and less or equal 20" HorizontalAlignment="Left" Height="68" Margin="75,73,0,0" VerticalAlignment="Top" Width="245"/>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="36*"/>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="37*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="163*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="270*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Button" Margin="2" Click="Button_Click" Grid.Row="2" Grid.Column="1"/>
+        <TextBox x:Name="Nrows" PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap" Margin="2" Grid.IsSharedSizeScope="True" Grid.Column="1" Grid.Row="1"/>
+        <Label Content="Provide value >= 3 and less or equal 20" Margin="90,94,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.IsSharedSizeScope="True" HorizontalAlignment="Left" Width="220" Height="26" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+
     </Grid>
 </Page>

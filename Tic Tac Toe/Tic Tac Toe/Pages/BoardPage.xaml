@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Tic_Tac_Toe.Pages"
       xmlns:board="clr-namespace:Tic_Tac_Toe"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="400"
       Title="BoardPage">
     <Page.Resources>
         <Style TargetType="Button">
