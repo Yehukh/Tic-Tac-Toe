@@ -56,7 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Checks\CheckForTie.cs" />
-    <Compile Include="RefreshMatrix.cs" />
+    <Compile Include="Refresh\RefreshBoard.cs" />
+    <Compile Include="Refresh\RefreshMatrix.cs" />
     <Compile Include="ResetGameWindow.xaml.cs">
       <DependentUpon>ResetGameWindow.xaml</DependentUpon>
     </Compile>

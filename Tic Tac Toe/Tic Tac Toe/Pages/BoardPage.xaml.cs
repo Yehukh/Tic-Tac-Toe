@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tic_Tac_Toe.Refresheres;
 
 namespace Tic_Tac_Toe.Pages
 {
@@ -34,41 +35,21 @@ namespace Tic_Tac_Toe.Pages
             cell.Sign = _firstPlayer ? "X" : "O";
             _firstPlayer = !_firstPlayer;
 
-            string[,] boardMat = RefreshMatrix.UpdateMat();
+            string[,] boardMat = RefreshMatrix.Update();
 
             if (CheckWinner.CheckForResult(boardMat, cell.Sign))
             {
                 var resetGameWindow = new ResetGameWindow($"{cell.Sign} won!!");
-                foreach(var c in Tic_Tac_Toe.Board.Cells)
-                {
-                    c.CanSelect = false;
-                }
-                if (resetGameWindow.ShowDialog() == true)
-                {
-                    foreach (var c in Tic_Tac_Toe.Board.Cells)
-                    {
-                        c.CanSelect = true;
-                        c.Sign = null;
-                    }
-                }
+                UpdateBoard.MakeUnavailible();
+                if (resetGameWindow.ShowDialog() == true) UpdateBoard.Update();
             }
             else
             {
                 if (CheckForTie.CheckBoarForTie(boardMat))
                 {
                     var resetGameWindow = new ResetGameWindow("Tie");
-                    foreach (var c in Tic_Tac_Toe.Board.Cells)
-                    {
-                        c.CanSelect = false;
-                    }
-                    if (resetGameWindow.ShowDialog() == true)
-                    {
-                        foreach (var c in Tic_Tac_Toe.Board.Cells)
-                        {
-                            c.CanSelect = true;
-                            c.Sign = null;
-                        }
-                    }
+                    UpdateBoard.MakeUnavailible();
+                    if (resetGameWindow.ShowDialog() == true) UpdateBoard.Update();
                 }
             }
         }

@@ -8,7 +8,7 @@ namespace Tic_Tac_Toe
 {
     public static class RefreshMatrix
     {
-        public static string[,] UpdateMat()
+        public static string[,] Update()
         {
             int n = Board.Rows;
             string[,] cells = new string[n, n];
