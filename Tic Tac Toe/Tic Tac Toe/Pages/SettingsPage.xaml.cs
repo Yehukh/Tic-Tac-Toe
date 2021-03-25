@@ -43,7 +43,7 @@ namespace Tic_Tac_Toe.Pages
             }
             catch (Exception)
             {
-                MessageBox.Show("Not valid number");
+                MessageBox.Show("Number should be more or equal to 3 and less or equal to 20");
                 Nrows.Text = string.Empty;
             }
         }
