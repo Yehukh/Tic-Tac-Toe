@@ -71,7 +71,7 @@
     </Compile>
     <Compile Include="Board\Board.cs" />
     <Compile Include="Board\BoardCell.cs" />
-    <Compile Include="Checks\CheckWinner.cs" />
+    <Compile Include="Checks\CheckForTheResult.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

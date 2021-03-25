@@ -7,10 +7,10 @@ using Tic_Tac_Toe;
 
 namespace Tic_Tac_Toe
 {
-    public class CheckWinner
+    public class CheckForTheResult
     {
 		private static int block;
-        public static bool CheckForResult(string[,] matrix, string symbol)
+        public static bool CheckForWin(string[,] matrix, string symbol, out string result)
         {
 
             switch (Board.Columns)
@@ -37,11 +37,13 @@ namespace Tic_Tac_Toe
 				{
 					if (CheckDiagonals(matrix, col, row, symbol) || CheckLanes(matrix, col, row, symbol)) 
 					{
+						result = $"{symbol} won!";
 						return true;
 					}
 					
 				}
 			}
+			result = "";
 			return false;
 		}
 		private static bool CheckDiagonals(string[,] matrix, int offsetX, int offsetY, string symbol)
@@ -75,6 +77,23 @@ namespace Tic_Tac_Toe
 			}
 
 			return false;
+		}
+		public static bool CheckBoarForTie(string[,] matrix, out string result)
+		{
+			
+			for (int i = 0; i < Board.Columns; i++)
+			{
+				for (int j = 0; j < Board.Columns; j++)
+				{
+					if (matrix[i, j] == null)
+                    {
+						result = "";
+						return false;
+					}
+				}
+			}
+			result = "Tie!";
+			return true;
 		}
 	}
 }

@@ -28,6 +28,7 @@ namespace Tic_Tac_Toe.Pages
         }
 
         private bool _firstPlayer = true;
+        public string result;
         private void CellClick(object sender, RoutedEventArgs e)
         {
 
@@ -37,20 +38,11 @@ namespace Tic_Tac_Toe.Pages
 
             string[,] boardMat = RefreshMatrix.Update();
 
-            if (CheckWinner.CheckForResult(boardMat, cell.Sign))
+            if (CheckForTheResult.CheckForWin(boardMat, cell.Sign, out result)||CheckForTheResult.CheckBoarForTie(boardMat, out result))
             {
-                var resetGameWindow = new ResetGameWindow($"{cell.Sign} won!!");
+                var resetGameWindow = new ResetGameWindow(result);
                 UpdateBoard.MakeUnavailible();
                 if (resetGameWindow.ShowDialog() == true) UpdateBoard.Update();
-            }
-            else
-            {
-                if (CheckForTie.CheckBoarForTie(boardMat))
-                {
-                    var resetGameWindow = new ResetGameWindow("Tie");
-                    UpdateBoard.MakeUnavailible();
-                    if (resetGameWindow.ShowDialog() == true) UpdateBoard.Update();
-                }
             }
         }
     }
