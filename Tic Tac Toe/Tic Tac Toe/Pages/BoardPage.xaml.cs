@@ -45,7 +45,11 @@ namespace Tic_Tac_Toe.Pages
                 }
                 if (resetGameWindow.ShowDialog() == true)
                 {
-
+                    foreach (var c in Tic_Tac_Toe.Board.Cells)
+                    {
+                        c.CanSelect = true;
+                        c.Sign = null;
+                    }
                 }
             }
             else
@@ -59,7 +63,11 @@ namespace Tic_Tac_Toe.Pages
                     }
                     if (resetGameWindow.ShowDialog() == true)
                     {
-
+                        foreach (var c in Tic_Tac_Toe.Board.Cells)
+                        {
+                            c.CanSelect = true;
+                            c.Sign = null;
+                        }
                     }
                 }
             }
