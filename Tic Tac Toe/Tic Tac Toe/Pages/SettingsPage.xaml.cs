@@ -31,10 +31,11 @@ namespace Tic_Tac_Toe.Pages
         {
             try
             {
-                int rows = Convert.ToInt32(Nrows.Text);
+                Int32.TryParse(Nrows.Text, out int rows);
                 if (rows >= 3 && rows <= 20)
                 {
-                    if (rows * rows == Board.Cells.Count) UpdateBoard.Update();
+                    var cell = Board.Cells.FirstOrDefault(x => x.Sign != null);
+                    if (cell != null) UpdateBoard.Update();
                     Board.Columns = rows;
                     Board.Rows = rows;
                 }
