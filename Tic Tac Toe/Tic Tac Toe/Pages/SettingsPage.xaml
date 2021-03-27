@@ -39,10 +39,10 @@
             <ComboBoxItem Content="Medium"/>
             <ComboBoxItem Content="Impossible"/>
         </ComboBox>
-        <Label Content="Name for the first user" Margin="25,5" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Label Content="Name for the second user" Margin="25,5" Grid.Row="2" Grid.Column="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <TextBox Margin="25,10" Grid.Row="3"/>
-        <TextBox Margin="25,10" Grid.Row="3" Grid.Column="2"/>
+        <Label Visibility="Collapsed" Content="Name for the first user" Margin="25,5" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Visibility="Collapsed" Content="Name for the second user" Margin="25,5" Grid.Row="2" Grid.Column="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox Visibility="Collapsed" Margin="25,10" Grid.Row="3"/>
+        <TextBox Visibility="Collapsed" Margin="25,10" Grid.Row="3" Grid.Column="2"/>
         <GridSplitter HorizontalAlignment="Stretch" Margin="0" Grid.Column="1" Grid.RowSpan="9"/>
     </Grid>
 </Page>

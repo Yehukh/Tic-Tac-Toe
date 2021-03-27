@@ -34,18 +34,18 @@ namespace Tic_Tac_Toe.Pages
                 int rows = Convert.ToInt32(Nrows.Text);
                 if (rows >= 3 && rows <= 20)
                 {
+                    if (rows * rows == Board.Cells.Count) UpdateBoard.Update();
                     Board.Columns = rows;
                     Board.Rows = rows;
-                    UpdateBoard.Update();
                 }
                 else
                 {
-                    throw new Exception();
+                    throw new Exception("Number should be more or equal to 3 and less or equal to 20");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Number should be more or equal to 3 and less or equal to 20");
+                MessageBox.Show(ex.Message);
                 Nrows.Text = string.Empty;
             }
         }
