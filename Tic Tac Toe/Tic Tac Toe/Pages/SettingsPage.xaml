@@ -28,21 +28,21 @@
         <Button Content="Play!" Margin="25,15" Click="Button_Click" Grid.Row="7"/>
         <TextBox x:Name="Nrows" Text="3" PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap" Margin="25,15" Grid.IsSharedSizeScope="True" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label Content="Specify board size" Margin="10" VerticalContentAlignment="Center" Grid.Row="5" HorizontalContentAlignment="Center"/>
-        <StackPanel x:Name="RadioButtons" Margin="10,5" Grid.RowSpan="2">
+        <StackPanel IsEnabled="False"  x:Name="RadioButtons" Margin="10,5" Grid.RowSpan="2">
             <RadioButton GroupName="GameMode" Content="User vs User on the same PC" IsChecked="True" VerticalContentAlignment="Center" />
             <RadioButton GroupName="GameMode" Content="User vs Bot" VerticalContentAlignment="Center" />
             <RadioButton GroupName="GameMode" Content="User vs User via internet" VerticalContentAlignment="Center" />
         </StackPanel>
         <Label Content="Difficulty" Margin="33,5,50,5" Grid.Column="2" HorizontalContentAlignment="Center"/>
-        <ComboBox Margin="33,0,50,0" Grid.Column="2" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+        <ComboBox IsEnabled="False" Margin="33,0,50,0" Grid.Column="2" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
             <ComboBoxItem Content="Easy"/>
             <ComboBoxItem Content="Medium"/>
             <ComboBoxItem Content="Impossible"/>
         </ComboBox>
-        <Label Visibility="Collapsed" Content="Name for the first user" Margin="25,5" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Label Visibility="Collapsed" Content="Name for the second user" Margin="25,5" Grid.Row="2" Grid.Column="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <TextBox Visibility="Collapsed" Margin="25,10" Grid.Row="3"/>
-        <TextBox Visibility="Collapsed" Margin="25,10" Grid.Row="3" Grid.Column="2"/>
+        <Label Content="Name for the first user" Margin="25,5" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Name for the second user" Margin="25,5" Grid.Row="2" Grid.Column="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox IsEnabled="False" Margin="25,10" Grid.Row="3"/>
+        <TextBox IsEnabled="False" Margin="25,10" Grid.Row="3" Grid.Column="2"/>
         <GridSplitter HorizontalAlignment="Stretch" Margin="0" Grid.Column="1" Grid.RowSpan="9"/>
     </Grid>
 </Page>
