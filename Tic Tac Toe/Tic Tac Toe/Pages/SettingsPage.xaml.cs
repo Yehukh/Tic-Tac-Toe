@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tic_Tac_Toe.Refresheres;
 
 namespace Tic_Tac_Toe.Pages
 {
@@ -35,6 +36,7 @@ namespace Tic_Tac_Toe.Pages
                 {
                     Board.Columns = rows;
                     Board.Rows = rows;
+                    UpdateBoard.Update();
                 }
                 else
                 {

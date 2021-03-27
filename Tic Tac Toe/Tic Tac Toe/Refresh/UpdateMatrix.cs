@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tic_Tac_Toe
 {
-    public static class RefreshMatrix
+    public static class UpdateMatrix
     {
         public static string[,] Update()
         {

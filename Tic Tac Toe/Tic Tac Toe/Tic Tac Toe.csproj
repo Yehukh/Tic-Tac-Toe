@@ -55,8 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Refresh\RefreshBoard.cs" />
-    <Compile Include="Refresh\RefreshMatrix.cs" />
+    <Compile Include="Refresh\UpdateBoard.cs" />
+    <Compile Include="Refresh\UpdateMatrix.cs" />
     <Compile Include="ResetGameWindow.xaml.cs">
       <DependentUpon>ResetGameWindow.xaml</DependentUpon>
     </Compile>

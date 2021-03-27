@@ -34,7 +34,7 @@ namespace Tic_Tac_Toe.Pages
             cell.Sign = MainWindow.FirstPlayer ? "X" : "O";
             MainWindow.FirstPlayer = !MainWindow.FirstPlayer;
 
-            string[,] boardMat = RefreshMatrix.Update();
+            string[,] boardMat = UpdateMatrix.Update();
 
             if (CheckForTheResult.CheckForWin(boardMat, cell.Sign, out result)||CheckForTheResult.CheckBoarForTie(boardMat, out result))
             {

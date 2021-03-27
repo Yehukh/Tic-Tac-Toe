@@ -25,8 +25,8 @@
             <RowDefinition Height="62*"/>
             <RowDefinition Height="107*"/>
         </Grid.RowDefinitions>
-        <Button Content="Start!" Margin="25,15" Click="Button_Click" Grid.Row="7"/>
-        <TextBox x:Name="Nrows" PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap" Margin="25,15" Grid.IsSharedSizeScope="True" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Content="Play!" Margin="25,15" Click="Button_Click" Grid.Row="7"/>
+        <TextBox x:Name="Nrows" Text="3" PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap" Margin="25,15" Grid.IsSharedSizeScope="True" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label Content="Specify board size" Margin="10" VerticalContentAlignment="Center" Grid.Row="5" HorizontalContentAlignment="Center"/>
         <StackPanel x:Name="RadioButtons" Margin="10,5" Grid.RowSpan="2">
             <RadioButton GroupName="GameMode" Content="User vs User on the same PC" IsChecked="True" VerticalContentAlignment="Center" />
