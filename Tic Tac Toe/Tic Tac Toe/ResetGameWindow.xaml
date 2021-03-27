@@ -5,7 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tic_Tac_Toe"
         mc:Ignorable="d"
-        Title="ResetGameWindow" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+        Title="Game over" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+    </Window.Resources>
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
@@ -16,8 +25,8 @@
         <TextBlock Text="{Binding Result,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}" Grid.Row="0"/>
         <TextBlock Grid.Row="1">Do you want to restart game?</TextBlock>
 
-        <WrapPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,15,0,0">
-            <Button IsDefault="True" Click="Accept_Click" MinWidth="60" Margin="0,0,10,0">Yes</Button>
+        <WrapPanel Grid.Row="2" Margin="19,0,19.6,0.2">
+            <Button IsDefault="True" Click="Accept_Click" MinWidth="60" Margin="0,0,10,0" >Yes</Button>
             <Button IsCancel="True" MinWidth="60">No</Button>
         </WrapPanel>
 
