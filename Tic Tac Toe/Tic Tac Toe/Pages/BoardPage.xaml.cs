@@ -21,20 +21,18 @@ namespace Tic_Tac_Toe.Pages
     /// </summary>
     public partial class BoardPage : Page
     {
-       
+        public string result;
+
         public BoardPage()
         {
             InitializeComponent();
         }
-
-        private bool _firstPlayer = true;
-        public string result;
+        
         private void CellClick(object sender, RoutedEventArgs e)
         {
-
             var cell = (sender as Button).DataContext as BoardCell;
-            cell.Sign = _firstPlayer ? "X" : "O";
-            _firstPlayer = !_firstPlayer;
+            cell.Sign = MainWindow.FirstPlayer ? "X" : "O";
+            MainWindow.FirstPlayer = !MainWindow.FirstPlayer;
 
             string[,] boardMat = RefreshMatrix.Update();
 

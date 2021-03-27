@@ -8,6 +8,19 @@ namespace Tic_Tac_Toe
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static bool _firstPlayer = true;
+        public static bool FirstPlayer
+        {
+            get
+            {
+                return _firstPlayer;
+            }
+            set
+            {
+                _firstPlayer = value;
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
