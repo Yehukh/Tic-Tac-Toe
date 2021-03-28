@@ -6,7 +6,7 @@ namespace Tic_Tac_Toe
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         private static bool _firstPlayer = true;
         public static bool FirstPlayer

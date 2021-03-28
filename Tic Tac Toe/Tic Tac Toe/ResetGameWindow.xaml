@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tic_Tac_Toe"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        fw:AcrylicWindow.Enabled="True"
         mc:Ignorable="d"
         Title="Game over" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
@@ -15,19 +17,29 @@
             <Setter Property="BorderThickness" Value="1" />
         </Style>
     </Window.Resources>
-    <Grid Margin="10">
+    <Grid Margin="10" fw:PointerTracker.Enabled="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
             <RowDefinition Height="20" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="{Binding Result,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}" Grid.Row="0"/>
-        <TextBlock Grid.Row="1">Do you want to restart game?</TextBlock>
+        <TextBlock Foreground="{DynamicResource SystemBaseHighColorBrush}" TextAlignment="Center" Text="{Binding Result,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}" Grid.Row="0"/>
+        <TextBlock Foreground="{DynamicResource SystemBaseHighColorBrush}" TextAlignment="Center" Grid.Row="1">Do you want to restart game?</TextBlock>
 
         <WrapPanel Grid.Row="2" Margin="19,0,19.6,0.2">
-            <Button IsDefault="True" Click="Accept_Click" MinWidth="60" Margin="0,0,10,0" >Yes</Button>
-            <Button IsCancel="True" MinWidth="60">No</Button>
+            <Button IsDefault="True" Click="Accept_Click" MinWidth="60" IsHitTestVisible="{Binding Path=CanSelect}"
+                        Style="{DynamicResource ButtonRevealStyle}"
+                        Background="{DynamicResource SystemAltHighColorBrush}"
+                        Foreground="{DynamicResource SystemBaseHighColorBrush}"
+                        BorderBrush="{DynamicResource SystemBaseHighColorBrush}"
+                        BorderThickness="1" Margin="0,0,10,0" >Yes</Button>
+            <Button IsCancel="True" IsHitTestVisible="{Binding Path=CanSelect}"
+                        Style="{DynamicResource ButtonRevealStyle}"
+                        Background="{DynamicResource SystemAltHighColorBrush}"
+                        Foreground="{DynamicResource SystemBaseHighColorBrush}"
+                        BorderBrush="{DynamicResource SystemBaseHighColorBrush}"
+                        BorderThickness="1" MinWidth="60">No</Button>
         </WrapPanel>
 
     </Grid>

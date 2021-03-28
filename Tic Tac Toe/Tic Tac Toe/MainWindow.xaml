@@ -1,21 +1,15 @@
-﻿<Window x:Class="Tic_Tac_Toe.MainWindow"
+﻿<fw:AcrylicWindow x:Class="Tic_Tac_Toe.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tic_Tac_Toe"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         mc:Ignorable="d"
+        AcrylicWindowStyle="NoIcon"
+        fw:AcrylicWindow.NoiseOpacity="0.01"
         Title="Tic Tac Toe" Height="500" Width="500" WindowStartupLocation="CenterScreen" MinHeight="500" MinWidth="500">
-    <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="FontSize" Value="20" />
-            <Setter Property="Background" Value="White" />
-            <Setter Property="Foreground" Value="Black" />
-            <Setter Property="Margin" Value="1"/>
-            <Setter Property="BorderThickness" Value="1" />
-        </Style>
-    </Window.Resources>
-    <Grid>
+    <Grid fw:PointerTracker.Enabled="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition/>
@@ -24,8 +18,20 @@
         <Frame Grid.Column="1" x:Name="Main" NavigationUIVisibility="Hidden"/>
 
         <StackPanel Grid.Column="0">
-            <Button x:Name="BoardButton" Content="Board" Click="BoardButton_Click"/>
-            <Button x:Name="SettingsButton" Content="Settings" Click="SettingsButton_Click"/>
+            <Button x:Name="BoardButton" Style="{DynamicResource ButtonRevealStyle}"
+                        Background="Transparent"
+                        Foreground="{DynamicResource SystemBaseHighColorBrush}"
+                        BorderBrush="{DynamicResource SystemBaseHighColorBrush}"
+                        FontSize="20"
+                        BorderThickness="1"
+                        Margin="1" Content="Board" Click="BoardButton_Click"/>
+            <Button x:Name="SettingsButton" Style="{DynamicResource ButtonRevealStyle}"
+                        Background="Transparent"
+                        Foreground="{DynamicResource SystemBaseHighColorBrush}"
+                        BorderBrush="{DynamicResource SystemBaseHighColorBrush}"
+                        FontSize="20"
+                        BorderThickness="1"
+                        Margin="1" Content="Settings" Click="SettingsButton_Click"/>
         </StackPanel>
     </Grid>
-</Window>
+</fw:AcrylicWindow>
