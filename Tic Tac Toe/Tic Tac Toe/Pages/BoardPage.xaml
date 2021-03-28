@@ -8,6 +8,7 @@
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       fw:AcrylicWindow.Enabled="True"
       mc:Ignorable="d" 
+      fw:AcrylicWindow.NoiseOpacity="0"
       d:DesignHeight="500" d:DesignWidth="400"
       Title="BoardPage">
 
@@ -24,11 +25,9 @@
                     <Button Content="{Binding Path=Sign}" 
                         IsHitTestVisible="{Binding Path=CanSelect}"
                         Style="{DynamicResource ButtonRevealStyle}"
-                        Background="{DynamicResource SystemAltHighColorBrush}"
+                        Background="{DynamicResource SystemAltMediumHighColorBrush}"
                         Foreground="{DynamicResource SystemBaseHighColorBrush}"
-                        BorderBrush="{DynamicResource SystemBaseHighColorBrush}"
                         FontSize="32"
-                        BorderThickness="1"
                         Margin="1"
                         Click="CellClick"/>
                 </DataTemplate>

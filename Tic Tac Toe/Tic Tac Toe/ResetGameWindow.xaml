@@ -7,16 +7,8 @@
         xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         fw:AcrylicWindow.Enabled="True"
         mc:Ignorable="d"
+        fw:AcrylicWindow.AcrylicWindowStyle="NoIcon"
         Title="Game over" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="FontSize" Value="20" />
-            <Setter Property="Background" Value="White" />
-            <Setter Property="Foreground" Value="Black" />
-            <Setter Property="Margin" Value="1"/>
-            <Setter Property="BorderThickness" Value="1" />
-        </Style>
-    </Window.Resources>
     <Grid Margin="10" fw:PointerTracker.Enabled="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
@@ -32,14 +24,12 @@
                         Style="{DynamicResource ButtonRevealStyle}"
                         Background="{DynamicResource SystemAltHighColorBrush}"
                         Foreground="{DynamicResource SystemBaseHighColorBrush}"
-                        BorderBrush="{DynamicResource SystemBaseHighColorBrush}"
-                        BorderThickness="1" Margin="0,0,10,0" >Yes</Button>
+                        Margin="0,0,10,0" >Yes</Button>
             <Button IsCancel="True" IsHitTestVisible="{Binding Path=CanSelect}"
                         Style="{DynamicResource ButtonRevealStyle}"
                         Background="{DynamicResource SystemAltHighColorBrush}"
                         Foreground="{DynamicResource SystemBaseHighColorBrush}"
-                        BorderBrush="{DynamicResource SystemBaseHighColorBrush}"
-                        BorderThickness="1" MinWidth="60">No</Button>
+                        MinWidth="60">No</Button>
         </WrapPanel>
 
     </Grid>
