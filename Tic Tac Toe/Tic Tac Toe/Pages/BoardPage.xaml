@@ -8,11 +8,10 @@
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       fw:AcrylicWindow.Enabled="True"
       mc:Ignorable="d" 
-      fw:AcrylicWindow.NoiseOpacity="0"
       d:DesignHeight="500" d:DesignWidth="400"
       Title="BoardPage">
 
-    <Grid x:Name="MainBoard" fw:PointerTracker.Enabled="True">
+    <Grid x:Name="MainBoard" Background="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" fw:PointerTracker.Enabled="True">
         <ItemsControl x:Name="Board" ItemsSource="{x:Static board:Board.Cells}" Grid.ColumnSpan="2">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -25,7 +24,7 @@
                     <Button Content="{Binding Path=Sign}" 
                         IsHitTestVisible="{Binding Path=CanSelect}"
                         Style="{DynamicResource ButtonRevealStyle}"
-                        Background="{DynamicResource SystemAltMediumHighColorBrush}"
+                        Background="{DynamicResource SystemAltHighColorBrush}"
                         Foreground="{DynamicResource SystemBaseHighColorBrush}"
                         FontSize="32"
                         Margin="1"

@@ -6,7 +6,6 @@
       xmlns:local="clr-namespace:Tic_Tac_Toe.Pages"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       fw:AcrylicWindow.Enabled="True"
-      fw:AcrylicWindow.NoiseOpacity="0"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="400"
       Title="SettingsPage">
