@@ -31,16 +31,19 @@ namespace Tic_Tac_Toe.Pages
         private void CellClick(object sender, RoutedEventArgs e)
         {
             var cell = (sender as Button).DataContext as BoardCell;
-            cell.Sign = MainWindow.FirstPlayer ? "X" : "O";
-            MainWindow.FirstPlayer = !MainWindow.FirstPlayer;
-
-            string[,] boardMat = UpdateMatrix.Update();
-
-            if (CheckForTheResult.CheckForWin(boardMat, cell.Sign, out result)||CheckForTheResult.CheckBoarForTie(boardMat, out result))
+            if (cell.CanModify)
             {
-                var resetGameWindow = new ResetGameWindow(result);
-                UpdateBoard.MakeUnavailible();
-                if (resetGameWindow.ShowDialog() == true) UpdateBoard.Update();
+                cell.Sign = MainWindow.FirstPlayer ? "X" : "O";
+                cell.CanModify = false;
+                MainWindow.FirstPlayer = !MainWindow.FirstPlayer;
+                string[,] boardMat = UpdateMatrix.Update();
+
+                if (CheckForTheResult.CheckForWin(boardMat, cell.Sign, out result) || CheckForTheResult.CheckBoarForTie(boardMat, out result))
+                {
+                    var resetGameWindow = new ResetGameWindow(result);
+                    UpdateBoard.MakeUnavailible();
+                    if (resetGameWindow.ShowDialog() == true) UpdateBoard.Update();
+                }
             }
         }
     }

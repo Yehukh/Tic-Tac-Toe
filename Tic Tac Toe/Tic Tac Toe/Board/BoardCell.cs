@@ -12,6 +12,7 @@ namespace Tic_Tac_Toe
     {
         private string _sign;
         private bool _canSelect = true;
+        private bool _canModify = true;
 
         public string Sign
         {
@@ -20,7 +21,9 @@ namespace Tic_Tac_Toe
             {
                 _sign = value;
                 if (value != null)
+                {
                     CanSelect = false;
+                }
                 OnPropertyChanged();
             }
         }
@@ -31,6 +34,15 @@ namespace Tic_Tac_Toe
             set
             {
                 _canSelect = value;
+                OnPropertyChanged();
+            }
+        }
+        public bool CanModify
+        {
+            get { return _canModify; }
+            set
+            {
+                _canModify = value;
                 OnPropertyChanged();
             }
         }

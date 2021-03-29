@@ -14,6 +14,7 @@ namespace Tic_Tac_Toe.Refresheres
             {
                 cell.CanSelect = true;
                 cell.Sign = null;
+                cell.CanModify = true;
             }
         }
 
