@@ -16,6 +16,7 @@ namespace Tic_Tac_Toe.Refresheres
                 cell.Sign = null;
                 cell.CanModify = true;
             }
+            MainWindow.FirstPlayer = true;
         }
 
         internal static void MakeUnavailible()
