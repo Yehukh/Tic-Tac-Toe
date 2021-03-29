@@ -28,6 +28,11 @@
                         Foreground="{DynamicResource SystemBaseHighColorBrush}"
                         FontSize="20"
                         Margin="1" Content="Settings" Click="SettingsButton_Click"/>
+            <Button x:Name="RestartButton" Style="{DynamicResource ButtonRevealStyle}"
+                        Background="Transparent"
+                        Foreground="{DynamicResource SystemBaseHighColorBrush}"
+                        FontSize="20"
+                        Margin="1" Content="Restart" Click="RestartButton_Click"/>
         </StackPanel>
     </Grid>
 </fw:AcrylicWindow>
