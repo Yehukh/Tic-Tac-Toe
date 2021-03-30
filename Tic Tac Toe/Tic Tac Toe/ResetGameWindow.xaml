@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         fw:AcrylicWindow.AcrylicWindowStyle="NoIcon"
         Title="Game over" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Margin="10" fw:PointerTracker.Enabled="True">
+    <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
             <RowDefinition Height="20" />
