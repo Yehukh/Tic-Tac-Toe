@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows;
 using Tic_Tac_Toe.Pages;
 using Tic_Tac_Toe.Refresheres;
@@ -31,7 +32,10 @@ namespace Tic_Tac_Toe
 
         private void BoardButton_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new BoardPage();
+            if (Main.Content.ToString() != "Tic_Tac_Toe.Pages.BoardPage")
+            {
+                Main.Dispatcher.Invoke(new Action(() => { Main.Content = new BoardPage(); }));
+            }
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
