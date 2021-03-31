@@ -40,7 +40,11 @@ namespace Tic_Tac_Toe
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new SettingsPage();
+            if (Main.Content.ToString() != "Tic_Tac_Toe.Pages.SettingsPage")
+            {
+
+                Main.Content = new SettingsPage();
+            }
         }
 
         private void RestartButton_Click(object sender, RoutedEventArgs e)
