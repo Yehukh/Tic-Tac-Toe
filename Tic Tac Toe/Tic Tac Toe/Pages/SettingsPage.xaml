@@ -35,6 +35,11 @@
             </Button.Content>
         </Button>
 
+        <StackPanel x:Name="RadioButtons" Margin="10,5,60,10" Grid.ColumnSpan="2">
+            <RadioButton x:Name="UserButton" GroupName="GameMode" Foreground="{DynamicResource SystemBaseHighColorBrush}" Content="User vs User on the same PC" VerticalContentAlignment="Center" Checked="UserButton_Checked" />
+            <RadioButton x:Name="BotButton" GroupName="GameMode" Foreground="{DynamicResource SystemBaseHighColorBrush}" Content="User vs Bot" VerticalContentAlignment="Center" Checked="BotButton_Checked" />
+        </StackPanel>
+
         <Viewbox Margin="0" Grid.IsSharedSizeScope="True" Grid.Column="1" Grid.Row="2">
             <TextBox x:Name="Nrows" Style="{DynamicResource TextBoxRevealStyle}" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" Text="3" PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap" Margin="0" Grid.IsSharedSizeScope="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="148"/>
         </Viewbox>
