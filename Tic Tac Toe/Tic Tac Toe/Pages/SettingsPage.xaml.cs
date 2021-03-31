@@ -22,9 +22,18 @@ namespace Tic_Tac_Toe.Pages
     /// </summary>
     public partial class SettingsPage : Page
     {
+
         public SettingsPage()
         {
             InitializeComponent();
+            if (UserVsBotGameplay.UserVsBot)
+            {
+                BotButton.IsChecked = true;
+            }
+            else
+            {
+                UserButton.IsChecked = true;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -54,6 +63,18 @@ namespace Tic_Tac_Toe.Pages
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void UserButton_Checked(object sender, RoutedEventArgs e)
+        {
+            UserVsBotGameplay.UserVsBot = false;
+            UpdateBoard.Update();
+        }
+
+        private void BotButton_Checked(object sender, RoutedEventArgs e)
+        {
+            UserVsBotGameplay.UserVsBot = true;
+            UpdateBoard.Update();
         }
     }
 }

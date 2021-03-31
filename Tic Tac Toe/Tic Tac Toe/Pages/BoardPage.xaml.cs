@@ -22,18 +22,53 @@ namespace Tic_Tac_Toe.Pages
     public partial class BoardPage : Page
     {
         public string result;
+        public delegate void PerformClick(object sender);
+        public PerformClick performClick;
 
         public BoardPage()
         {
             InitializeComponent();
+
+            if (UserVsBotGameplay.UserVsBot)
+            {
+                performClick = UserVsBotClick;
+            }
+            else
+            {
+                performClick = UserVsUserClick;
+            }
         }
         
         private void CellClick(object sender, RoutedEventArgs e)
+        {
+
+            performClick(sender);
+        }
+
+        private void UserVsUserClick(object sender)
         {
             var cell = (sender as Button).DataContext as BoardCell;
             if (cell.CanModify)
             {
                 cell.Sign = MainWindow.FirstPlayer ? "X" : "O";
+                cell.CanModify = false;
+                MainWindow.FirstPlayer = !MainWindow.FirstPlayer;
+                string[,] boardMat = UpdateMatrix.Update();
+
+                if (CheckForTheResult.CheckForWin(boardMat, cell.Sign, out result) || CheckForTheResult.CheckBoarForTie(boardMat, out result))
+                {
+                    var resetGameWindow = new ResetGameWindow(result);
+                    UpdateBoard.MakeUnavailible();
+                    if (resetGameWindow.ShowDialog() == true) UpdateBoard.Update();
+                }
+            }
+        }
+        private void UserVsBotClick(object sender)
+        {
+            var cell = (sender as Button).DataContext as BoardCell;
+            if (cell.CanModify)
+            {
+                cell.Sign = "X";
                 cell.CanModify = false;
                 MainWindow.FirstPlayer = !MainWindow.FirstPlayer;
                 string[,] boardMat = UpdateMatrix.Update();
