@@ -41,7 +41,6 @@ namespace Tic_Tac_Toe.Pages
         
         private void CellClick(object sender, RoutedEventArgs e)
         {
-
             performClick(sender);
         }
 
@@ -63,7 +62,9 @@ namespace Tic_Tac_Toe.Pages
                 }
             }
         }
-        private void UserVsBotClick(object sender)
+        private string[,] boardMat;
+        private int dice;
+        private async void UserVsBotClick(object sender)
         {
             var cell = (sender as Button).DataContext as BoardCell;
             if (cell.CanModify)
@@ -71,15 +72,44 @@ namespace Tic_Tac_Toe.Pages
                 cell.Sign = "X";
                 cell.CanModify = false;
                 MainWindow.FirstPlayer = !MainWindow.FirstPlayer;
-                string[,] boardMat = UpdateMatrix.Update();
+                boardMat = UpdateMatrix.Update();
 
                 if (CheckForTheResult.CheckForWin(boardMat, cell.Sign, out result) || CheckForTheResult.CheckBoarForTie(boardMat, out result))
                 {
                     var resetGameWindow = new ResetGameWindow(result);
                     UpdateBoard.MakeUnavailible();
                     if (resetGameWindow.ShowDialog() == true) UpdateBoard.Update();
+                    return;
                 }
             }
+            //boardMat = BotNextMove(boardMat);
+            Random rnd = new Random();
+            bool sign = true;
+            while (sign)
+            {
+                dice = rnd.Next(1, boardMat.Length);
+                int i = dice / Tic_Tac_Toe.Board.Columns;
+                int j = dice % Tic_Tac_Toe.Board.Columns;
+                if (boardMat[i, j] == null)
+                {
+                    boardMat[i, j] = "O";
+                    sign = false;
+                }
+            }
+            var cellBot = Tic_Tac_Toe.Board.Cells.ElementAt(dice);
+            cellBot.CanModify = false;
+            await AsyncSign(cellBot);
+            if (CheckForTheResult.CheckForWin(boardMat, cell.Sign, out result) || CheckForTheResult.CheckBoarForTie(boardMat, out result))
+            {
+                var resetGameWindow = new ResetGameWindow(result);
+                UpdateBoard.MakeUnavailible();
+                if (resetGameWindow.ShowDialog() == true) UpdateBoard.Update();
+            }
+        }
+        private async Task AsyncSign(BoardCell cell)
+        {
+            await Task.Delay(100);
+            cell.Sign = "O";
         }
     }
 }
