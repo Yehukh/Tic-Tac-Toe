@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tic_Tac_Toe"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         mc:Ignorable="d"
         AcrylicWindowStyle="NoIcon"
@@ -11,7 +12,7 @@
         Title="Tic Tac Toe" Height="500" Width="500" WindowStartupLocation="CenterScreen" MinHeight="500" MinWidth="500">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="125"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
@@ -20,19 +21,31 @@
         <StackPanel Grid.Column="0">
             <Button x:Name="BoardButton" Style="{DynamicResource ButtonRevealStyle}"
                         Background="Transparent"
-                        Foreground="{DynamicResource SystemBaseHighColorBrush}"
                         FontSize="20"
-                        Margin="1" Content="Board" Click="BoardButton_Click"/>
+                        Margin="1" Click="BoardButton_Click" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <fa:ImageAwesome Icon="Times" Foreground="{DynamicResource SystemBaseHighColorBrush}" Height="24" Width="24" Margin="0,0,5,0"/>
+                    <TextBlock Text="Board" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+                </StackPanel>
+            </Button>
             <Button x:Name="SettingsButton" Style="{DynamicResource ButtonRevealStyle}"
                         Background="Transparent"
-                        Foreground="{DynamicResource SystemBaseHighColorBrush}"
                         FontSize="20"
-                        Margin="1" Content="Settings" Click="SettingsButton_Click"/>
+                        Margin="1" HorizontalContentAlignment="Left" Click="SettingsButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <fa:ImageAwesome Icon="Cog" Foreground="{DynamicResource SystemBaseHighColorBrush}" Height="24" Width="24" Margin="0,0,5,0"/>
+                    <TextBlock Text="Settings" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+                </StackPanel>
+            </Button>
             <Button x:Name="RestartButton" Style="{DynamicResource ButtonRevealStyle}"
                         Background="Transparent"
-                        Foreground="{DynamicResource SystemBaseHighColorBrush}"
                         FontSize="20"
-                        Margin="1" Content="Restart" Click="RestartButton_Click"/>
+                        Margin="1" HorizontalContentAlignment="Left" Click="RestartButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <fa:ImageAwesome Icon="Refresh" Foreground="{DynamicResource SystemBaseHighColorBrush}" Height="24" Width="24" Margin="0,0,5,0"/>
+                    <TextBlock Text="Restart" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+                </StackPanel>
+            </Button>
         </StackPanel>
     </Grid>
 </fw:AcrylicWindow>
