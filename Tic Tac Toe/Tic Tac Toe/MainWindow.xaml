@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         AcrylicWindowStyle="NoIcon"
         fw:AcrylicWindow.NoiseOpacity="0"
-        Title="Tic Tac Toe" Height="500" Width="500" WindowStartupLocation="CenterScreen" MinHeight="500" MinWidth="500">
+        Title="Tic Tac Toe" Height="500" Width="500" WindowStartupLocation="CenterScreen" MinHeight="500" MinWidth="500" Icon="tic-tac-toe.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="125"/>
