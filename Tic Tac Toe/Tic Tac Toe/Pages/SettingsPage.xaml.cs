@@ -52,6 +52,7 @@ namespace Tic_Tac_Toe.Pages
                 {
                     throw new Exception("Number should be more or equal to 3 and less or equal to 20");
                 }
+                NavigationService.Navigate(new Uri("/Pages/BoardPage.xaml", UriKind.Relative));
             }
             catch (Exception ex)
             {
