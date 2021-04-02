@@ -57,7 +57,7 @@
         </RadioButton>
 
         <Viewbox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="6" Grid.IsSharedSizeScope="True">
-        <ComboBox Style="{DynamicResource ComboBoxRevealStyle}" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.IsSharedSizeScope="True" MinWidth="100">
+        <ComboBox x:Name="DifficultyComboBox" Style="{DynamicResource ComboBoxRevealStyle}" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.IsSharedSizeScope="True" MinWidth="100" SelectionChanged="Difficulty_SelectionChanged">
             <ComboBoxItem>
                 <Viewbox>
                     <TextBlock Text="Easy"/>

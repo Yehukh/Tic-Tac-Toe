@@ -25,6 +25,19 @@ namespace Tic_Tac_Toe
             }
         }
 
+        private static int _difficulty;
+        public static int Difficulty
+        {
+            get
+            {
+                return _difficulty;
+            }
+            set
+            {
+                _difficulty = value;
+            }
+        }
+
         public static async void MakeMoveBot(string[,] board)
         {
             Random rnd = new Random();
