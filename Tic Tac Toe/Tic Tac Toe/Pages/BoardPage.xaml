@@ -25,7 +25,6 @@
                         Style="{DynamicResource ButtonRevealStyle}"
                         Background="{DynamicResource SystemAltHighColorBrush}"
                         Foreground="{DynamicResource SystemBaseHighColorBrush}"
-                        FontSize="32"
                         Margin="1"
                         Click="CellClick">
                         <Button.Content>
