@@ -21,9 +21,10 @@ namespace Tic_Tac_Toe.Pages
     /// </summary>
     public partial class BoardPage : Page
     {
-        public string result;
-        public delegate void PerformClick(object sender);
-        public PerformClick performClick;
+        private string result;
+
+        private delegate void PerformClick(object sender);
+        private readonly PerformClick performClick;
 
         public BoardPage()
         {
@@ -52,7 +53,7 @@ namespace Tic_Tac_Toe.Pages
                 cell.Sign = MainWindow.FirstPlayer ? "X" : "O";
                 cell.CanModify = false;
                 MainWindow.FirstPlayer = !MainWindow.FirstPlayer;
-                string[,] boardMat = UpdateMatrix.Update();
+                var boardMat = UpdateMatrix.Update();
 
                 if (CheckForTheResult.CheckForWin(boardMat, cell.Sign, out result) || CheckForTheResult.CheckBoarForTie(boardMat, out result))
                 {
@@ -62,17 +63,15 @@ namespace Tic_Tac_Toe.Pages
                 }
             }
         }
-        private string[,] boardMat;
-        private int dice;
-        private async void UserVsBotClick(object sender)
+        private void UserVsBotClick(object sender)
         {
             var cell = (sender as Button).DataContext as BoardCell;
             if (cell.CanModify)
             {
-                cell.Sign = "X";
+                cell.Sign = MainWindow.FirstPlayer ? "X" : "O";
                 cell.CanModify = false;
                 MainWindow.FirstPlayer = !MainWindow.FirstPlayer;
-                boardMat = UpdateMatrix.Update();
+                var boardMat = UpdateMatrix.Update();
 
                 if (CheckForTheResult.CheckForWin(boardMat, cell.Sign, out result) || CheckForTheResult.CheckBoarForTie(boardMat, out result))
                 {
@@ -81,35 +80,8 @@ namespace Tic_Tac_Toe.Pages
                     if (resetGameWindow.ShowDialog() == true) UpdateBoard.Update();
                     return;
                 }
-            }
-            //boardMat = BotNextMove(boardMat);
-            Random rnd = new Random();
-            bool sign = true;
-            while (sign)
-            {
-                dice = rnd.Next(1, boardMat.Length);
-                int i = dice / Tic_Tac_Toe.Board.Columns;
-                int j = dice % Tic_Tac_Toe.Board.Columns;
-                if (boardMat[i, j] == null)
-                {
-                    boardMat[i, j] = "O";
-                    sign = false;
-                }
-            }
-            var cellBot = Tic_Tac_Toe.Board.Cells.ElementAt(dice);
-            cellBot.CanModify = false;
-            await AsyncSign(cellBot);
-            if (CheckForTheResult.CheckForWin(boardMat, cell.Sign, out result) || CheckForTheResult.CheckBoarForTie(boardMat, out result))
-            {
-                var resetGameWindow = new ResetGameWindow(result);
-                UpdateBoard.MakeUnavailible();
-                if (resetGameWindow.ShowDialog() == true) UpdateBoard.Update();
-            }
-        }
-        private async Task AsyncSign(BoardCell cell)
-        {
-            await Task.Delay(100);
-            cell.Sign = "O";
+                UserVsBotGameplay.MakeMoveBot(boardMat);
+            } 
         }
     }
 }
