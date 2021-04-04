@@ -22,18 +22,28 @@ namespace Tic_Tac_Toe.Pages
     /// </summary>
     public partial class SettingsPage : Page
     {
-
+        public List<RadioButton> difficultyRadioButtons;
         public SettingsPage()
         {
             InitializeComponent();
+            difficultyRadioButtons = new List<RadioButton>() { EasyButton, MediumButton, ImpossibleButton };
             if (UserVsBotGameplay.UserVsBot)
             {
                 BotButton.IsChecked = true;
+                foreach (var radioButton in difficultyRadioButtons)
+                {
+                    radioButton.Visibility = Visibility.Visible;
+                }
             }
             else
             {
                 UserButton.IsChecked = true;
+                foreach (var radioButton in difficultyRadioButtons)
+                {
+                    radioButton.Visibility = Visibility.Hidden;
+                }
             }
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -68,12 +78,20 @@ namespace Tic_Tac_Toe.Pages
 
         private void UserButton_Checked(object sender, RoutedEventArgs e)
         {
+            foreach(var radioButton in difficultyRadioButtons)
+            {
+                radioButton.Visibility = Visibility.Hidden;
+            }
             UserVsBotGameplay.UserVsBot = false;
             UpdateBoard.Update();
         }
 
         private void BotButton_Checked(object sender, RoutedEventArgs e)
         {
+            foreach (var radioButton in difficultyRadioButtons)
+            {
+                radioButton.Visibility = Visibility.Visible;
+            }
             UserVsBotGameplay.UserVsBot = true;
             UpdateBoard.Update();
         }
