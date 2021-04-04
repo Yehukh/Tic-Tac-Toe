@@ -19,21 +19,25 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="0.75*"/>
             <RowDefinition Height="0.75*"/>
             <RowDefinition Height="0.33*"/>
             <RowDefinition Height="0.33*"/>
             <RowDefinition Height="0.33*"/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.33*"/>
+            <RowDefinition Height="0.33*"/>
+            <RowDefinition Height="0.33*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="0.75*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Button IsHitTestVisible="{Binding Path=CanSelect}" Padding="0,0,0,7"
                         Style="{DynamicResource ButtonRoundRevealStyle}"
                         Background="{DynamicResource SystemAltHighColorBrush}" fw:RevealElement.MouseOverBackground="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}"
-                        Foreground="{DynamicResource SystemBaseHighColorBrush}" Margin="0" Click="Button_Click" Grid.Column="2" Grid.Row="8">
+                        Foreground="{DynamicResource SystemBaseHighColorBrush}" Margin="0" Click="Button_Click" Grid.Column="2" Grid.Row="12">
             <Button.Content>
                 <Viewbox>
                     <TextBlock Text="Play!"/>
@@ -41,48 +45,51 @@
             </Button.Content>
         </Button>
 
-        <RadioButton Grid.Column="2" Grid.Row="3" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="UserButton" GroupName="GameMode" VerticalContentAlignment="Center" Checked="UserButton_Checked">
+        <RadioButton Grid.Column="2" Grid.Row="4" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="UserButton" GroupName="GameMode" VerticalContentAlignment="Center" Checked="UserButton_Checked">
             <RadioButton.Content>
                 <Viewbox>
                     <TextBlock Text="User vs User"/>
                 </Viewbox>
             </RadioButton.Content>
         </RadioButton>
-        <RadioButton Grid.Column="2" Grid.Row="4" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="BotButton" GroupName="GameMode" VerticalContentAlignment="Center" Checked="BotButton_Checked" >
+        <RadioButton Grid.Column="2" Grid.Row="5" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="BotButton" GroupName="GameMode" VerticalContentAlignment="Center" Checked="BotButton_Checked" >
             <RadioButton.Content>
                 <Viewbox>
                     <TextBlock Text="User vs Bot"/>
                 </Viewbox>
             </RadioButton.Content>
         </RadioButton>
-        <RadioButton IsEnabled="False" Grid.Column="2" Grid.Row="5" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="InternetButton" GroupName="GameMode" VerticalContentAlignment="Center" Checked="InternetButton_Checked" >
+        <RadioButton IsEnabled="False" Grid.Column="2" Grid.Row="6" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="InternetButton" GroupName="GameMode" VerticalContentAlignment="Center" Checked="InternetButton_Checked" >
             <RadioButton.Content>
                 <Viewbox>
                     <TextBlock Text="Internet"/>
                 </Viewbox>
             </RadioButton.Content>
         </RadioButton>
-
-        <Viewbox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="7" Grid.IsSharedSizeScope="True">
-        <ComboBox x:Name="DifficultyComboBox" Style="{DynamicResource ComboBoxRevealStyle}" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.IsSharedSizeScope="True" MinWidth="100" SelectionChanged="Difficulty_SelectionChanged">
-            <ComboBoxItem>
+        <RadioButton Grid.Column="2" Grid.Row="8" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="EasyButton" GroupName="Difficulty" VerticalContentAlignment="Center">
+            <RadioButton.Content>
                 <Viewbox>
                     <TextBlock Text="Easy"/>
                 </Viewbox>
-            </ComboBoxItem>
-            <ComboBoxItem>
+            </RadioButton.Content>
+        </RadioButton>
+        <RadioButton Grid.Column="2" Grid.Row="9" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="MediumButton" GroupName="MediumButton" VerticalContentAlignment="Center">
+            <RadioButton.Content>
                 <Viewbox>
                     <TextBlock Text="Medium"/>
                 </Viewbox>
-            </ComboBoxItem>
-            <ComboBoxItem>
+            </RadioButton.Content>
+        </RadioButton>
+        <RadioButton IsEnabled="False" Grid.Column="2" Grid.Row="10" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="ImpossibleButton" GroupName="Difficulty" VerticalContentAlignment="Center">
+            <RadioButton.Content>
                 <Viewbox>
                     <TextBlock Text="Impossible"/>
                 </Viewbox>
-            </ComboBoxItem>
-        </ComboBox>
-        </Viewbox>
-        <Viewbox Margin="0" Grid.IsSharedSizeScope="True" Grid.Column="2" Grid.Row="2">
+            </RadioButton.Content>
+        </RadioButton>
+
+
+        <Viewbox Margin="0" Grid.IsSharedSizeScope="True" Grid.Column="2" Grid.Row="2" Grid.RowSpan="2">
             <TextBox x:Name="Nrows" Style="{DynamicResource TextBoxRevealStyle}" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" Text="3" PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap" Margin="0" Grid.IsSharedSizeScope="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="148"/>
         </Viewbox>
 

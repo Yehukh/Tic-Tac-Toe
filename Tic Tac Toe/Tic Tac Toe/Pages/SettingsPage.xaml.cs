@@ -34,9 +34,6 @@ namespace Tic_Tac_Toe.Pages
             {
                 UserButton.IsChecked = true;
             }
-
-            DifficultyComboBox.SelectedIndex = UserVsBotGameplay.Difficulty;
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -79,11 +76,6 @@ namespace Tic_Tac_Toe.Pages
         {
             UserVsBotGameplay.UserVsBot = true;
             UpdateBoard.Update();
-        }
-
-        private void Difficulty_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            UserVsBotGameplay.Difficulty = DifficultyComboBox.SelectedIndex;
         }
 
         private void InternetButton_Checked(object sender, RoutedEventArgs e)
