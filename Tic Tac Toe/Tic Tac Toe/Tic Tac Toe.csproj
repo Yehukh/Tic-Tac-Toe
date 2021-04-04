@@ -61,13 +61,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="EasyBotGameplay.cs" />
+    <Compile Include="Gameplay\EasyBotGameplay.cs" />
     <Compile Include="Refresh\UpdateBoard.cs" />
     <Compile Include="Refresh\UpdateMatrix.cs" />
-    <Compile Include="ResetGameWindow.xaml.cs">
+    <Compile Include="Pages\ResetGameWindow.xaml.cs">
       <DependentUpon>ResetGameWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserVsBotGameplay.cs" />
+    <Compile Include="Gameplay\UserVsBotGameplay.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,7 +91,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ResetGameWindow.xaml">
+    <Page Include="Pages\ResetGameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
