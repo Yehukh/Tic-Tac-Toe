@@ -93,6 +93,7 @@ namespace Tic_Tac_Toe.Pages
             {
                 radioButton.Visibility = Visibility.Visible;
             }
+            difficultyRadioButtons.ElementAt(UserVsBotGameplay.Difficulty).IsChecked = true;
             UserVsBotGameplay.UserVsBot = true;
             UpdateBoard.Update();
         }
