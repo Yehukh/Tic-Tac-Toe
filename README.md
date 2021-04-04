@@ -11,9 +11,12 @@ Current version with its binaries(exe file and libraries) can be found in [relea
     * For field size more than 6 - 5 blocks;
 * User vs User mode on the same PC.
 * User vs Bot mode (only Easy mode is implemented)
-* 
-![image](https://user-images.githubusercontent.com/56174923/113519006-60661a00-9592-11eb-8827-b767fca7cef0.png)
-![image](https://user-images.githubusercontent.com/56174923/113519057-9efbd480-9592-11eb-914e-85707d4cd4e1.png)
-![image](https://user-images.githubusercontent.com/56174923/113519015-6825be80-9592-11eb-8b9e-0a935e0801a3.png)
-![image](https://user-images.githubusercontent.com/56174923/113519065-a4f1b580-9592-11eb-9aeb-81c81e8fde29.png)
+
+Dark Theme            |  White Theme 
+:-------------------------:|:-------------------------:
+![image](https://user-images.githubusercontent.com/56174923/113519355-49282c00-9594-11eb-8696-f28384c6bf68.png)|![image](https://user-images.githubusercontent.com/56174923/113519323-1f6f0500-9594-11eb-9677-c1c36378b050.png)
+![image](https://user-images.githubusercontent.com/56174923/113519304-fa7a9200-9593-11eb-9a67-d6f8c0cabf30.png)|![image](https://user-images.githubusercontent.com/56174923/113519329-272ea980-9594-11eb-88b1-70386e1856be.png)
+![image](https://user-images.githubusercontent.com/56174923/113519343-3ada1000-9594-11eb-8174-9e56b1b123ed.png)|![image](https://user-images.githubusercontent.com/56174923/113519338-331a6b80-9594-11eb-8135-5771e4277e1b.png)
+
+
 
