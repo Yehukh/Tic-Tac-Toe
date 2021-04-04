@@ -26,12 +26,37 @@ namespace Tic_Tac_Toe.Pages
         private delegate void PerformClick(object sender);
         private readonly PerformClick performClick;
 
+        private delegate void BotPerformClick(string[,] boardMat);
+        private readonly BotPerformClick botPerformClick;
+
         public BoardPage()
         {
             InitializeComponent();
 
             if (UserVsBotGameplay.UserVsBot)
             {
+                try
+                {
+                    switch (UserVsBotGameplay.Difficulty)
+                    {
+                        case 0:
+                            botPerformClick = EasyBotGameplay.MakeMoveBot;
+                            break;
+                        case 1:
+
+                            break;
+                        case 2:
+
+                            break;
+                        default:
+                            throw new Exception("Something went wrong");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
                 performClick = UserVsBotClick;
             }
             else
@@ -80,7 +105,7 @@ namespace Tic_Tac_Toe.Pages
                     if (resetGameWindow.ShowDialog() == true) UpdateBoard.Update();
                     return;
                 }
-                UserVsBotGameplay.MakeMoveBot(boardMat);
+                botPerformClick(boardMat);
             } 
         }
     }

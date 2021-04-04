@@ -67,21 +67,21 @@
             </RadioButton.Content>
         </RadioButton>
         
-        <RadioButton Visibility="Hidden" Grid.Column="2" Grid.Row="8" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="EasyButton" GroupName="Difficulty" VerticalContentAlignment="Center">
+        <RadioButton Visibility="Hidden" Grid.Column="2" Grid.Row="8" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="EasyButton" GroupName="Difficulty" VerticalContentAlignment="Center" Checked="EasyButton_Checked">
             <RadioButton.Content>
                 <Viewbox>
                     <TextBlock Text="Easy"/>
                 </Viewbox>
             </RadioButton.Content>
         </RadioButton>
-        <RadioButton Visibility="Hidden" Grid.Column="2" Grid.Row="9" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="MediumButton" GroupName="MediumButton" VerticalContentAlignment="Center">
+        <RadioButton Visibility="Hidden" Grid.Column="2" Grid.Row="9" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="MediumButton" GroupName="Difficulty" VerticalContentAlignment="Center" Checked="MediumButton_Checked">
             <RadioButton.Content>
                 <Viewbox>
                     <TextBlock Text="Medium"/>
                 </Viewbox>
             </RadioButton.Content>
         </RadioButton>
-        <RadioButton Visibility="Hidden" Grid.Column="2" Grid.Row="10" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="ImpossibleButton" GroupName="Difficulty" VerticalContentAlignment="Center">
+        <RadioButton Visibility="Hidden" Grid.Column="2" Grid.Row="10" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="ImpossibleButton" GroupName="Difficulty" VerticalContentAlignment="Center" Checked="ImpossibleButton_Checked">
                 <RadioButton.Content>
                     <Viewbox>
                         <TextBlock Text="Impossible"/>

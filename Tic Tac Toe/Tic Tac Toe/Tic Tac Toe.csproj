@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EasyBotGameplay.cs" />
     <Compile Include="Refresh\UpdateBoard.cs" />
     <Compile Include="Refresh\UpdateMatrix.cs" />
     <Compile Include="ResetGameWindow.xaml.cs">

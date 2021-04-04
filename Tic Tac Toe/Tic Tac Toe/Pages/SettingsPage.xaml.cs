@@ -30,6 +30,7 @@ namespace Tic_Tac_Toe.Pages
             if (UserVsBotGameplay.UserVsBot)
             {
                 BotButton.IsChecked = true;
+                difficultyRadioButtons.ElementAt(UserVsBotGameplay.Difficulty).IsChecked = true;
                 foreach (var radioButton in difficultyRadioButtons)
                 {
                     radioButton.Visibility = Visibility.Visible;
@@ -99,6 +100,21 @@ namespace Tic_Tac_Toe.Pages
         private void InternetButton_Checked(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void EasyButton_Checked(object sender, RoutedEventArgs e)
+        {
+            UserVsBotGameplay.Difficulty = 0;
+        }
+
+        private void MediumButton_Checked(object sender, RoutedEventArgs e)
+        {
+            UserVsBotGameplay.Difficulty = 1;
+        }
+
+        private void ImpossibleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            UserVsBotGameplay.Difficulty = 2;
         }
     }
 }
