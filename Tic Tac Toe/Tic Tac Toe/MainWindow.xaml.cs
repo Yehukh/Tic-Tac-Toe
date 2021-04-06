@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows;
+using Tic_Tac_Toe.Boards;
 using Tic_Tac_Toe.Pages;
 using Tic_Tac_Toe.Refresheres;
 

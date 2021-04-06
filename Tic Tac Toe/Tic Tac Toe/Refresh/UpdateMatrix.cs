@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
+using Tic_Tac_Toe.Boards;
 
 namespace Tic_Tac_Toe
 {

@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
+using Tic_Tac_Toe.Boards;
 using Tic_Tac_Toe.Refresheres;
 
 namespace Tic_Tac_Toe.Pages

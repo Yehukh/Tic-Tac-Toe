@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using Tic_Tac_Toe.Boards;
+using Tic_Tac_Toe.Checks;
+using Tic_Tac_Toe.Gameplay;
 using Tic_Tac_Toe.Refresheres;
 
 namespace Tic_Tac_Toe.Pages
@@ -32,10 +35,10 @@ namespace Tic_Tac_Toe.Pages
                             botPerformClick = EasyBotGameplay.MakeMoveBot;
                             break;
                         case 1:
-
+                            
                             break;
                         case 2:
-
+                            botPerformClick = ImpossibleBotGameplay.MakeMoveBot;
                             break;
                         default:
                             throw new Exception("Something went wrong");

@@ -76,8 +76,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Board\Board.cs" />
-    <Compile Include="Board\BoardCell.cs" />
+    <Compile Include="Boards\Board.cs" />
+    <Compile Include="Boards\BoardCell.cs" />
     <Compile Include="Checks\CheckForTheResult.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

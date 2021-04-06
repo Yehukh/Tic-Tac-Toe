@@ -81,7 +81,7 @@
                 </Viewbox>
             </RadioButton.Content>
         </RadioButton>
-        <RadioButton Visibility="Hidden" IsEnabled="False" Grid.Column="2" Grid.Row="10" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="ImpossibleButton" GroupName="Difficulty" VerticalContentAlignment="Center" Checked="ImpossibleButton_Checked">
+        <RadioButton Visibility="Hidden" Grid.Column="2" Grid.Row="10" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="ImpossibleButton" GroupName="Difficulty" VerticalContentAlignment="Center" Checked="ImpossibleButton_Checked">
                 <RadioButton.Content>
                     <Viewbox>
                         <TextBlock Text="Impossible"/>
