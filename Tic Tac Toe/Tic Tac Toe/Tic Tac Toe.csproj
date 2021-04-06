@@ -62,6 +62,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Gameplay\EasyBotGameplay.cs" />
+    <Compile Include="Gameplay\ImpossibleBotGameplay.cs" />
+    <Compile Include="Gameplay\MediumBotGameplay.cs" />
     <Compile Include="Refresh\UpdateBoard.cs" />
     <Compile Include="Refresh\UpdateMatrix.cs" />
     <Compile Include="Pages\ResetGameWindow.xaml.cs">
