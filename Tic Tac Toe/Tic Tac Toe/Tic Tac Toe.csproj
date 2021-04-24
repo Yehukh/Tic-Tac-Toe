@@ -70,6 +70,9 @@
       <DependentUpon>ResetGameWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gameplay\UserVsBotGameplay.cs" />
+    <Compile Include="ViewModels\BoardViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
