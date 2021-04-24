@@ -5,7 +5,7 @@ using Tic_Tac_Toe.Boards;
 using Tic_Tac_Toe.Pages;
 using Tic_Tac_Toe.Refresheres;
 
-namespace Tic_Tac_Toe
+namespace Tic_Tac_Toe.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

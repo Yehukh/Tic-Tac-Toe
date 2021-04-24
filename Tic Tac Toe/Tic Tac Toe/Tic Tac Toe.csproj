@@ -66,14 +66,14 @@
     <Compile Include="Gameplay\MediumBotGameplay.cs" />
     <Compile Include="Refresh\UpdateBoard.cs" />
     <Compile Include="Refresh\UpdateMatrix.cs" />
-    <Compile Include="Pages\ResetGameWindow.xaml.cs">
+    <Compile Include="Views\ResetGameWindow.xaml.cs">
       <DependentUpon>ResetGameWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gameplay\UserVsBotGameplay.cs" />
     <Compile Include="ViewModels\BoardViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -84,28 +84,28 @@
     <Compile Include="Boards\Board.cs" />
     <Compile Include="Boards\BoardCell.cs" />
     <Compile Include="Checks\CheckForTheResult.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\BoardPage.xaml">
+    <Page Include="Views\BoardPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\SettingsPage.xaml">
+    <Page Include="Views\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ResetGameWindow.xaml">
+    <Page Include="Views\ResetGameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\BoardPage.xaml.cs">
+    <Compile Include="Views\BoardPage.xaml.cs">
       <DependentUpon>BoardPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SettingsPage.xaml.cs">
+    <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
