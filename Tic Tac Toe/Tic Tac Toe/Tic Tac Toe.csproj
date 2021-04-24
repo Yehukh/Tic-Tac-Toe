@@ -66,6 +66,7 @@
     <Compile Include="Gameplay\MediumBotGameplay.cs" />
     <Compile Include="Refresh\UpdateBoard.cs" />
     <Compile Include="Refresh\UpdateMatrix.cs" />
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="Views\ResetGameWindow.xaml.cs">
       <DependentUpon>ResetGameWindow.xaml</DependentUpon>
     </Compile>
@@ -135,7 +136,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="tic-tac-toe.png" />
+    <Resource Include="Icon\tic-tac-toe.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
