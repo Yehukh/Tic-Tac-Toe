@@ -3,49 +3,101 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Tic_Tac_Toe"
+        xmlns:vm="clr-namespace:Tic_Tac_Toe.ViewModels"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         mc:Ignorable="d"
         AcrylicWindowStyle="NoIcon"
         fw:AcrylicWindow.NoiseOpacity="0"
-        Title="Tic Tac Toe" Height="500" Width="500" WindowStartupLocation="CenterScreen" MinHeight="500" MinWidth="500" Icon="tic-tac-toe.png">
+        Title="Tic Tac Toe" 
+        Height="500" 
+        Width="500" 
+        WindowStartupLocation="CenterScreen" 
+        MinHeight="500" 
+        MinWidth="500" 
+        Icon="Icons\tic-tac-toe.png">
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="125"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Frame Grid.Column="1" x:Name="Main" NavigationUIVisibility="Hidden"/>
-
         <StackPanel Grid.Column="0">
-            <Button x:Name="BoardButton" Style="{DynamicResource ButtonRevealStyle}"
-                        Background="Transparent"
-                        FontSize="20"
-                        Margin="1" Click="BoardButton_Click" HorizontalContentAlignment="Left">
+            
+            <Button x:Name="BoardButton" 
+                    Style="{DynamicResource ButtonRevealStyle}"
+                    Background="Transparent"
+                    FontSize="20"
+                    Margin="1" 
+                    Click="BoardButton_Click" 
+                    HorizontalContentAlignment="Left">
+
                 <StackPanel Orientation="Horizontal">
-                    <fa:ImageAwesome Icon="Times" Foreground="{DynamicResource SystemBaseHighColorBrush}" Height="24" Width="24" Margin="0,0,5,0"/>
-                    <TextBlock Text="Board" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+
+                    <fa:ImageAwesome Icon="Times" 
+                                     Foreground="{DynamicResource SystemBaseHighColorBrush}" 
+                                     Height="24" 
+                                     Width="24" 
+                                     Margin="0,0,5,0"/>
+
+                    <TextBlock Text="Board" 
+                               Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+
                 </StackPanel>
             </Button>
-            <Button x:Name="SettingsButton" Style="{DynamicResource ButtonRevealStyle}"
-                        Background="Transparent"
-                        FontSize="20"
-                        Margin="1" HorizontalContentAlignment="Left" Click="SettingsButton_Click">
+            
+            <Button x:Name="SettingsButton" 
+                    Style="{DynamicResource ButtonRevealStyle}"
+                    Background="Transparent"
+                    FontSize="20"
+                    Margin="1" 
+                    HorizontalContentAlignment="Left" 
+                    Click="SettingsButton_Click">
+                
                 <StackPanel Orientation="Horizontal">
-                    <fa:ImageAwesome Icon="Cog" Foreground="{DynamicResource SystemBaseHighColorBrush}" Height="24" Width="24" Margin="0,0,5,0"/>
-                    <TextBlock Text="Settings" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+                    
+                    <fa:ImageAwesome Icon="Cog" 
+                                     Foreground="{DynamicResource SystemBaseHighColorBrush}" 
+                                     Height="24" 
+                                     Width="24" 
+                                     Margin="0,0,5,0"/>
+                    
+                    <TextBlock Text="Settings" 
+                               Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+                    
                 </StackPanel>
             </Button>
-            <Button x:Name="RestartButton" Style="{DynamicResource ButtonRevealStyle}"
-                        Background="Transparent"
-                        FontSize="20"
-                        Margin="1" HorizontalContentAlignment="Left" Click="RestartButton_Click">
+            
+            <Button x:Name="RestartButton" 
+                    Style="{DynamicResource ButtonRevealStyle}"
+                    Background="Transparent"
+                    FontSize="20"
+                    Margin="1" 
+                    HorizontalContentAlignment="Left" 
+                    Click="RestartButton_Click">
+                
                 <StackPanel Orientation="Horizontal">
-                    <fa:ImageAwesome Icon="Refresh" Foreground="{DynamicResource SystemBaseHighColorBrush}" Height="24" Width="24" Margin="0,0,5,0"/>
-                    <TextBlock Text="Restart" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+                    
+                    <fa:ImageAwesome Icon="Refresh" 
+                                     Foreground="{DynamicResource SystemBaseHighColorBrush}" 
+                                     Height="24" 
+                                     Width="24" 
+                                     Margin="0,0,5,0"/>
+                    
+                    <TextBlock Text="Restart" 
+                               Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+                    
                 </StackPanel>
             </Button>
         </StackPanel>
+
+        <Frame Grid.Column="1" 
+               x:Name="Main"
+               NavigationUIVisibility="Hidden"/>
+        
     </Grid>
 </fw:AcrylicWindow>
