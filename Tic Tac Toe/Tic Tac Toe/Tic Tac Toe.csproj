@@ -67,6 +67,8 @@
     <Compile Include="Gameplay\EasyBotGameplay.cs" />
     <Compile Include="Gameplay\ImpossibleBotGameplay.cs" />
     <Compile Include="Gameplay\MediumBotGameplay.cs" />
+    <Compile Include="Models\BoardModel.cs" />
+    <Compile Include="Models\BoardCellModel.cs" />
     <Compile Include="Refresh\UpdateBoard.cs" />
     <Compile Include="Refresh\UpdateMatrix.cs" />
     <Compile Include="RelayCommand.cs" />
