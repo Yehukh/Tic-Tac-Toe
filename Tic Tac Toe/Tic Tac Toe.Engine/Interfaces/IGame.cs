@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Tic_Tac_Toe.Engine.Interfaces
+﻿namespace Tic_Tac_Toe.Engine.Interfaces
 {
-    interface IGame
+    public interface IGame
     {
+        Winner Winner { get; }
+
+        MoveResult MakeMachineMove();
+        MoveResult MakeMove(int fieldIdx);
     }
 }
