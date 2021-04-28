@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Tic_Tac_Toe.Engine
+﻿namespace Tic_Tac_Toe.Engine
 {
-    enum FieldState
+    public enum FieldState
     {
+        User = -1,
+        Empty = 0,
+        Machine = 1
     }
 }
