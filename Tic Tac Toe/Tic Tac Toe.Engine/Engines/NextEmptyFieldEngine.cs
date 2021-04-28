@@ -1,10 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Tic_Tac_Toe.Engine.Interfaces;
 
 namespace Tic_Tac_Toe.Engine.Engines
 {
-    class NextEmptyFieldEngine
+    public class NextEmptyFieldEngine : IEngine
     {
+        public int FindBestMove(Board board)
+        {
+            foreach (int index in board.GetEmptyFields())
+                return index;
+
+            return -1;
+        }
     }
 }
