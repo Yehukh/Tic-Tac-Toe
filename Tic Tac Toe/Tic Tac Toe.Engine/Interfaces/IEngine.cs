@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Tic_Tac_Toe.Engine.Interfaces
+﻿namespace Tic_Tac_Toe.Engine.Interfaces
 {
-    interface IEngine
+    public interface IEngine
     {
+        int FindBestMove(Board board);
     }
 }
