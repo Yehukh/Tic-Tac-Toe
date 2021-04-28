@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Tic_Tac_Toe.Engine
+﻿namespace Tic_Tac_Toe.Engine
 {
-    class Winner
+    public enum Winner
     {
+        User = -1,
+        Draw = 0,
+        Machine = 1,
+        None = 2
     }
 }
