@@ -51,21 +51,21 @@
             </Button.Content>
         </Button>
 
-        <RadioButton Grid.Column="2" Grid.Row="4" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="UserButton" GroupName="GameMode" VerticalContentAlignment="Center" Checked="UserButton_Checked">
+        <RadioButton Grid.Column="2" Grid.Row="4" Command="{Binding Settings.ChangeGameMode}" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="UserButton" GroupName="GameMode" VerticalContentAlignment="Center" Checked="UserButton_Checked">
             <RadioButton.Content>
                 <Viewbox>
                     <TextBlock Text="User vs User"/>
                 </Viewbox>
             </RadioButton.Content>
         </RadioButton>
-        <RadioButton Grid.Column="2" Grid.Row="5" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="BotButton" GroupName="GameMode" VerticalContentAlignment="Center" Checked="BotButton_Checked" >
+        <RadioButton Grid.Column="2" Grid.Row="5" Command="{Binding Settings.ChangeGameMode}" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="BotButton" GroupName="GameMode" VerticalContentAlignment="Center" Checked="BotButton_Checked" >
             <RadioButton.Content>
                 <Viewbox>
                     <TextBlock Text="User vs Bot"/>
                 </Viewbox>
             </RadioButton.Content>
         </RadioButton>
-        <RadioButton Visibility="Collapsed" Grid.Column="2" Grid.Row="6" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="InternetButton" GroupName="GameMode" VerticalContentAlignment="Center" Checked="InternetButton_Checked" >
+        <RadioButton Visibility="Collapsed" Grid.Column="2" Grid.Row="6" Command="{Binding Settings.ChangeGameMode}" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="InternetButton" GroupName="GameMode" VerticalContentAlignment="Center" Checked="InternetButton_Checked" >
             <RadioButton.Content>
                 <Viewbox>
                     <TextBlock Text="Internet"/>
@@ -73,21 +73,21 @@
             </RadioButton.Content>
         </RadioButton>
 
-        <RadioButton Visibility="Hidden" Grid.Column="2" Grid.Row="8" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="EasyButton" GroupName="Difficulty" VerticalContentAlignment="Center" Checked="EasyButton_Checked">
+        <RadioButton Visibility="Hidden" Grid.Column="2" Grid.Row="8" Command="{Binding Settings.ChangeBotDifficulty}" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="EasyButton" GroupName="Difficulty" VerticalContentAlignment="Center" Checked="EasyButton_Checked">
             <RadioButton.Content>
                 <Viewbox>
                     <TextBlock Text="Easy"/>
                 </Viewbox>
             </RadioButton.Content>
         </RadioButton>
-        <RadioButton Visibility="Hidden" Grid.Column="2" Grid.Row="9" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="MediumButton" GroupName="Difficulty" VerticalContentAlignment="Center" Checked="MediumButton_Checked">
+        <RadioButton Visibility="Hidden" Grid.Column="2" Grid.Row="9" Command="{Binding Settings.ChangeBotDifficulty}" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="MediumButton" GroupName="Difficulty" VerticalContentAlignment="Center" Checked="MediumButton_Checked">
             <RadioButton.Content>
                 <Viewbox>
                     <TextBlock Text="Medium"/>
                 </Viewbox>
             </RadioButton.Content>
         </RadioButton>
-        <RadioButton Visibility="Hidden" Grid.Column="2" Grid.Row="10" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="ImpossibleButton" GroupName="Difficulty" VerticalContentAlignment="Center" Checked="ImpossibleButton_Checked">
+        <RadioButton Visibility="Hidden" Grid.Column="2" Grid.Row="10" Command="{Binding Settings.ChangeBotDifficulty}" Background="{DynamicResource SystemChromeWhiteColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="ImpossibleButton" GroupName="Difficulty" VerticalContentAlignment="Center" Checked="ImpossibleButton_Checked">
                 <RadioButton.Content>
                     <Viewbox>
                         <TextBlock Text="Impossible"/>
