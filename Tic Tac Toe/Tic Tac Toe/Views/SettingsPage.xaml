@@ -4,12 +4,17 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Tic_Tac_Toe.Pages"
-      xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+      xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF" 
+      xmlns:vm="clr-namespace:Tic_Tac_Toe.ViewModels"
       fw:AcrylicWindow.Enabled="True"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="400"
       Title="SettingsPage">
-
+    
+    <Page.DataContext>
+        <vm:MainViewModel/>
+    </Page.DataContext>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -34,6 +39,7 @@
             <RowDefinition Height="0.75*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+        
         <Button IsHitTestVisible="{Binding Path=CanSelect}" Padding="0,0,0,7"
                         Style="{DynamicResource ButtonRoundRevealStyle}"
                         Background="{DynamicResource SystemAltHighColorBrush}" fw:RevealElement.MouseOverBackground="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}"
