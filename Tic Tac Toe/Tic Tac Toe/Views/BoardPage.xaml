@@ -8,14 +8,21 @@
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       fw:AcrylicWindow.Enabled="True"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="400"
+      d:DesignHeight="500" 
+      d:DesignWidth="400"
       Title="BoardPage">
 
-    <Grid x:Name="MainBoard" Background="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}">
-        <ItemsControl x:Name="Board" ItemsSource="{x:Static board:Board.Cells}" Grid.ColumnSpan="2">
+    <Grid x:Name="MainBoard" 
+          Background="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}">
+        
+        <ItemsControl x:Name="Board" 
+                      ItemsSource="{x:Static board:Board.Cells}" 
+                      Grid.ColumnSpan="2">
+            
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <UniformGrid  Rows="{x:Static board:Board.Rows}" Columns="{x:Static board:Board.Columns}"/>
+                    <UniformGrid  Rows="{x:Static board:Board.Rows}" 
+                                  Columns="{x:Static board:Board.Columns}"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
 
