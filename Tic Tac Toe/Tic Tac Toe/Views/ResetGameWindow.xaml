@@ -8,7 +8,11 @@
         fw:AcrylicWindow.Enabled="True"
         mc:Ignorable="d"
         fw:AcrylicWindow.AcrylicWindowStyle="NoIcon"
-        Title="Game over" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Game over" 
+        SizeToContent="WidthAndHeight" 
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen">
+    
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
@@ -16,20 +20,35 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Foreground="{DynamicResource SystemBaseHighColorBrush}" TextAlignment="Center" Text="{Binding Result,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}" Grid.Row="0"/>
-        <TextBlock Foreground="{DynamicResource SystemBaseHighColorBrush}" TextAlignment="Center" Grid.Row="1">Do you want to restart game?</TextBlock>
+        <TextBlock Foreground="{DynamicResource SystemBaseHighColorBrush}" 
+                   TextAlignment="Center" 
+                   Text="{Binding Result,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}" 
+                   Grid.Row="0"/>
 
-        <WrapPanel Grid.Row="2" Margin="19,0,19.6,0.2">
-            <Button IsDefault="True" Click="Accept_Click" MinWidth="60" IsHitTestVisible="{Binding Path=CanSelect}"
-                        Style="{DynamicResource ButtonRevealStyle}"
-                        Background="{DynamicResource SystemAltHighColorBrush}"
-                        Foreground="{DynamicResource SystemBaseHighColorBrush}"
-                        Margin="0,0,10,0" >Yes</Button>
-            <Button IsCancel="True" IsHitTestVisible="{Binding Path=CanSelect}"
-                        Style="{DynamicResource ButtonRevealStyle}"
-                        Background="{DynamicResource SystemAltHighColorBrush}"
-                        Foreground="{DynamicResource SystemBaseHighColorBrush}"
-                        MinWidth="60">No</Button>
+        <TextBlock Foreground="{DynamicResource SystemBaseHighColorBrush}" 
+                   TextAlignment="Center" 
+                   Grid.Row="1" 
+                   Text="Do you want to restart game?"/>
+
+        <WrapPanel Grid.Row="2" 
+                   Margin="19,0,19.6,0.2">
+
+            <Button IsDefault="True" 
+                    Click="Accept_Click" 
+                    MinWidth="60" 
+                    IsHitTestVisible="{Binding Path=CanSelect}"
+                    Style="{DynamicResource ButtonRevealStyle}"
+                    Background="{DynamicResource SystemAltHighColorBrush}"
+                    Foreground="{DynamicResource SystemBaseHighColorBrush}"
+                    Margin="0,0,10,0" 
+                    Content="Yes"/>
+
+            <Button IsCancel="True" 
+                    IsHitTestVisible="{Binding Path=CanSelect}"
+                    Style="{DynamicResource ButtonRevealStyle}"
+                    Background="{DynamicResource SystemAltHighColorBrush}"
+                    Foreground="{DynamicResource SystemBaseHighColorBrush}"
+                    MinWidth="60" Content="No"/>
         </WrapPanel>
 
     </Grid>

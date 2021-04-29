@@ -8,7 +8,8 @@
       xmlns:vm="clr-namespace:Tic_Tac_Toe.ViewModels"
       fw:AcrylicWindow.Enabled="True"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="400"
+      d:DesignHeight="500" 
+      d:DesignWidth="400"
       Title="SettingsPage">
     
     <Page.DataContext>
