@@ -2,7 +2,8 @@
 {
     public enum Winner
     {
-        User = -1,
+        User = -2,
+        AnotherUser = -1,
         Draw = 0,
         Machine = 1,
         None = 2

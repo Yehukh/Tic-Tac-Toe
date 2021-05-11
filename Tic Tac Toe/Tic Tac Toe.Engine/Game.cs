@@ -19,7 +19,7 @@ namespace Tic_Tac_Toe.Engine
 		{
 			if (!_board.IsMoveLegal(fieldIdx)) return MoveResult.IllegalMove;
 
-			return this.PerformMove(fieldIdx, FieldState.User);
+			return PerformMove(fieldIdx, FieldState.User);
 		}
 		
 		public MoveResult MakeMachineMove()
@@ -27,7 +27,7 @@ namespace Tic_Tac_Toe.Engine
 			int bestMove = _engine.FindBestMove(_board);
 
 			if (bestMove > -1)
-				return this.PerformMove(bestMove, FieldState.Machine);
+				return PerformMove(bestMove, FieldState.Machine);
 			else
 				return new MoveResult(false, true);
 		}
@@ -35,21 +35,21 @@ namespace Tic_Tac_Toe.Engine
 		private MoveResult PerformMove(int fieldIdx, FieldState fieldState)
 		{
 			_board[fieldIdx] = fieldState;
-			this.CheckWinner();
+			CheckWinner();
 
-			return new MoveResult(true, this.IsFinal());
+			return new MoveResult(true, IsFinal());
 		}
 		
-		internal void CheckWinner() => this.Winner = _board.CheckWinner();
+		internal void CheckWinner() => Winner = _board.CheckWinner();
 		
 		internal bool IsFinal()
 		{
-			if (this.Winner == Winner.None)
+			if (Winner == Winner.None)
 			{
 				if (_board.HasEmptyFields())
 					return false;
 
-				this.Winner = Winner.Draw;
+				Winner = Winner.Draw;
 			}
 
 			return true;
